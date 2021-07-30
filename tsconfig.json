@@ -1,0 +1,46 @@
+{
+    "compilerOptions": {
+        "target": "es5", // 指定 ECMAScript 目标版本
+        "module": "commonjs", //指定生成那个模块的代码
+        "strict": true,
+        "esModuleInterop": true,
+        "outDir": "dist",
+        "lib": [
+            "webworker",
+            "dom",
+            "es5",
+            "es2015",
+            "es2016",
+            "es2015.promise",
+            "dom.iterable",
+            "ESNext",
+        ], // 要包含在编译中的依赖库文件列表
+        "allowJs": true, // 允许编译 JavaScript 文件
+        "skipLibCheck": true, // 跳过所有声明文件的类型检查
+        "allowSyntheticDefaultImports": true, // 允许从没有默认导出的模块进行默认导入
+        "resolveJsonModule": true, // 允许使用 .json 扩展名导入的模块
+        "noEmit": true, // 不输出(意思是不编译代码，只执行类型检查)
+        "jsx": "react", // 在.tsx文件中支持JSX
+        "sourceMap": true, // 生成相应的.map文件
+        "declaration": true, // 生成相应的.d.ts文件
+        "allowUmdGlobalAccess": true,
+        "experimentalDecorators": true, // 启用对ES装饰器的实验性支持
+        "moduleResolution": "node",
+        "baseUrl": "./",
+        "incremental": true, // 通过从以前的编译中读取/写入信息到磁盘上的文件来启用增量编译
+        "forceConsistentCasingInFileNames": true,
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ]
+        }
+    },
+    "include": [
+        "src",
+        "src/index.tsx"
+    ],
+    "exclude": [
+        "node_modules",
+        "build"
+    ] // *** 不进行类型检查的文件 ***
+}

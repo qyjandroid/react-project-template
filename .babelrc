@@ -1,0 +1,29 @@
+{
+    "plugins": [
+        "transform-react-jsx-source",
+        [
+            "@babel/plugin-proposal-decorators",
+            {
+                "legacy": true
+            }
+        ]
+    ],
+    "presets": [
+        "@babel/preset-react",
+        [
+            "@babel/preset-env",
+            {
+                "targets": {
+                    "browsers": "chrome 49"
+                }
+            }
+        ],
+        [
+            "@babel/preset-typescript",
+            {
+                "isTSX": true,
+                "allExtensions": true
+            }
+        ]
+    ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "react-project-tmp",
+  "version": "1.0.0",
+  "description": "react 项目模板",
+  "main": "src/index.tsx",
+  "repository": "https://github.com.cnpmjs.org/qyjandroid/react-project-tmp.git",
+  "author": "quanyj <qyjandroid@163.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "immer": "^9.0.5",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
+    "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.14.8",
+    "@babel/plugin-proposal-decorators": "^7.14.5",
+    "@babel/preset-env": "^7.14.8",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.14.5",
+    "@types/react": "^17.0.15",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-router-dom": "^5.1.8",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "copy-webpack-plugin": "^9.0.1",
+    "html-webpack-plugin": "^5.3.2",
+    "webpack": "^5.47.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.8.0"
+  }
+}
