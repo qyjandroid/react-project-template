@@ -1,18 +1,18 @@
-import webpack from "webpack";
-const CleanWebpackPlugin = require("clean-webpack-plugin") ;
+const cleanWebpackPlugin = require("clean-webpack-plugin") ;
 const HtmlWebpackPlugin =require("html-webpack-plugin");
 const MiniCssExtractPlugin =require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const variable =require("./variable") ;
+const path =require("path");
 
+const {CleanWebpackPlugin}=cleanWebpackPlugin;
 const {PUBLIC_PATH,DIST_PATH,IS_DEV,SRC_PATH}=variable;
 
 function getHTMLPlugins() {
-
     const indexHtmlPlugin = new HtmlWebpackPlugin({
-        template: `${PUBLIC_PATH}/index.html`,
-        filename: `${DIST_PATH}/index.html`,
-        inject: false,
+        template: path.join(PUBLIC_PATH, 'index.html'),
+        filename: path.join(DIST_PATH, 'index.html'),
+        inject: true,//true 插入body底部，head:插入head标签，false:不生成js文件
         hash: true, // 会在打包好的bundle.js后面加上hash串
         title: "",
         minify: {
@@ -21,7 +21,7 @@ function getHTMLPlugins() {
             minifyCSS: true, // 压缩 HTML 中出现的 CSS 代码
             minifyJS: true // 压缩 HTML 中出现的 JS 代码
         },
-        page: "index"
+        // page: "index"
     });
 
     return [indexHtmlPlugin];

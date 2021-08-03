@@ -2,6 +2,7 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const variable =require("./webpackUtils/variable") ;
 const resolveConfig = require("./webpackUtils/resolve");
+const plugins=require("./webpackUtils/plugins");
 const {SRC_PATH, DIST_PATH, IS_DEV, IS_PRO, getCDNPath}=variable;
 
 
@@ -62,7 +63,8 @@ const config = {
             }
         ]
     },
-    resolve: resolveConfig
+    resolve: resolveConfig,
+    plugins: plugins.getPlugins()
 };
 
 module.exports =config;

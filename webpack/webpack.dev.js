@@ -1,19 +1,23 @@
+const webpack =require("webpack");
 const webpackMerge = require("webpack-merge");
 const baseConfig=require("./webpack.base");
 const variable =require("./webpackUtils/variable") ;
 const {DIST_PATH}=variable;
 
+const hotPlugin = new webpack.HotModuleReplacementPlugin();
+
 const config = {
     mode: "development",
     cache: { type: 'memory' },
-    devTool:"eval-cheap-module-source-map",
+    devtool:"eval-cheap-module-source-map",
+    plugins:[hotPlugin],
     devServer: {
         open: "chrome",
         contentBase: DIST_PATH,
         compress: true,//是否启用gzip压缩
         publicPath: "/",
+        host: "localhost",
         hot:true,
-        host: "0.0.0.0",
         port: 9093,
         disableHostCheck: true,
         stats: 'errors-only',

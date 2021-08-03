@@ -1,7 +1,7 @@
-import App from '@/App'
+import Home from '@/pages/Home'
 
 export default {
     routes: [
-        { exact: true, path: '/', component: App },
+        { exact: true, path: '/', component: Home },
     ],
 }

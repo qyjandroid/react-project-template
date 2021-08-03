@@ -1,13 +1,15 @@
 
-import React, { Component } from "react";
+import React from "react";
+import routerConfig from "./router/index";
+import RouterUI from "@/router/RouterUI";
 
-class App extends Component {
+document.title = "React App";
+
+class App extends React.Component {
     render() {
-        return (
-            <div className='title'>
-                <h1>Hello, World! </h1>
-            </div>
-        );
+        return <>
+            <RouterUI routers={routerConfig.routes} />
+        </>
     }
 }
 
