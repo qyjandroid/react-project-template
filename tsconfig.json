@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "target": "es5", // 指定 ECMAScript 目标版本
-        "module": "commonjs", //指定生成那个模块的代码
+        "module": "ESNext", //指定生成那个模块的代码
         "strict": true,
         "esModuleInterop": true,
         "outDir": "dist",
@@ -29,16 +29,23 @@
         "baseUrl": "./",
         "incremental": true, // 通过从以前的编译中读取/写入信息到磁盘上的文件来启用增量编译
         "forceConsistentCasingInFileNames": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
         "paths": {
             "@/*": [
                 "./src/*"
-            ]
+            ],
+            "@images/*": [
+                "src/assets/images/*"
+            ],
         }
     },
     "include": [
         "src",
         "src/index.tsx"
-    ],
+, "postcss.config.js"    ],
     "exclude": [
         "node_modules",
         "build"
