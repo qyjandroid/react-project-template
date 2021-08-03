@@ -21,7 +21,7 @@ function getHTMLPlugins() {
             minifyCSS: true, // 压缩 HTML 中出现的 CSS 代码
             minifyJS: true // 压缩 HTML 中出现的 JS 代码
         },
-        // page: "index"
+        page: "index"
     });
 
     return [indexHtmlPlugin];

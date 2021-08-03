@@ -1,10 +1,20 @@
 {
     "compilerOptions": {
+        /* 开启增量编译：TS 编译器在第一次编译的时候，会生成一个存储编译信息的文件，下一次编译的时候，会根据这个文件进行增量的编译，以此提高 TS 的编译速度 */
+        //        "incremental": true,
+        // 指定存储增量编译信息的文件位置
+        //        "tsBuildInfoFile": "./",
+        // 显示诊断信息
+        //        "diagnostics": true,
+        /* 指定模块代码的生成方式: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */
+        //        "module": "commonjs",
+        /* 指定 ECMAScript 的目标版本: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019' or 'ESNEXT'. */
         "target": "es5", // 指定 ECMAScript 目标版本
         "module": "ESNext", //指定生成那个模块的代码
-        "strict": true,
-        "esModuleInterop": true,
+        "strict": true, // 开启所有的严格检查配置
+        "esModuleInterop": true, // 允许 export = xxx 导出 ，并使用 import xxx form "module-name" 导入
         "outDir": "dist",
+        /* 指定要包含在编译中的库文件——引用类库——即申明文件，如果输出的模块方式是 es5，就会默认引入 "dom","es5","scripthost" 。如果在 TS 中想要使用一些 ES6 以上版本的语法，就需要引入相关的类库 */
         "lib": [
             "webworker",
             "dom",
@@ -13,26 +23,40 @@
             "es2016",
             "es2015.promise",
             "dom.iterable",
-            "ESNext",
+            "scripthost",
+            "esnext",
         ], // 要包含在编译中的依赖库文件列表
         "allowJs": true, // 允许编译 JavaScript 文件
+        // 检查 JS 文件
+        "checkJs": true,
         "skipLibCheck": true, // 跳过所有声明文件的类型检查
         "allowSyntheticDefaultImports": true, // 允许从没有默认导出的模块进行默认导入
         "resolveJsonModule": true, // 允许使用 .json 扩展名导入的模块
         "noEmit": true, // 不输出(意思是不编译代码，只执行类型检查)
+        /* react 模式下：直接将 JSX 编译成 JS，会生成 React.createElement 的形式，在使用前不需要再进行转换操作了，输出文件的扩展名为 .js */
+        /* preserve 模式下：不会将 JSX 编译成 JS，生成代码中会保留 JSX，以供后续的转换操作使用（比如：Babel）。 另外，输出文件会带有 .jsx 扩展名 */
+        /* react-native 模式下：相当于 preserve，它也保留了所有的 JSX，但是输出文件的扩展名是 .js */
         "jsx": "react", // 在.tsx文件中支持JSX
         "sourceMap": true, // 生成相应的.map文件
         "declaration": true, // 生成相应的.d.ts文件
         "allowUmdGlobalAccess": true,
         "experimentalDecorators": true, // 启用对ES装饰器的实验性支持
-        "moduleResolution": "node",
+        "moduleResolution": "node", // 制定模块解析策略
         "baseUrl": "./",
         "incremental": true, // 通过从以前的编译中读取/写入信息到磁盘上的文件来启用增量编译
         "forceConsistentCasingInFileNames": true,
+        /* 当目标是ES5或ES3的时候提供对for-of、扩展运算符和解构赋值中对于迭代器的完整支持 */
+        "downlevelIteration": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,
+        // 不允许使用隐式的 any 类型
+        "noImplicitAny": false,
+        // 不允许 this 有隐式的 any 类型，即 this 必须有明确的指向
+        "noImplicitThis": false,
+        // 不允许把 null、undefined 赋值给其他类型变量
+        "strictNullChecks": false,
         "paths": {
             "@/*": [
                 "./src/*"
@@ -44,10 +68,10 @@
     },
     "include": [
         "src",
-        "src/index.tsx"
-, "postcss.config.js"    ],
+        "postcss.config.js"
+    ],
     "exclude": [
         "node_modules",
-        "build"
+        "dist"
     ] // *** 不进行类型检查的文件 ***
 }

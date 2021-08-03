@@ -2,6 +2,7 @@ const webpack =require("webpack");
 const webpackMerge = require("webpack-merge");
 const baseConfig=require("./webpack.base");
 const variable =require("./webpackUtils/variable") ;
+
 const {DIST_PATH}=variable;
 
 const hotPlugin = new webpack.HotModuleReplacementPlugin();
@@ -10,7 +11,13 @@ const config = {
     mode: "development",
     cache: { type: 'memory' },
     devtool:"eval-cheap-module-source-map",
+    stats: 'errors-only',
     plugins:[hotPlugin],
+    watchOptions: {
+        aggregateTimeout: 500,
+        poll: 1000,
+        ignored: /node_modules/
+    },
     devServer: {
         open: "chrome",
         contentBase: DIST_PATH,
@@ -29,4 +36,6 @@ const config = {
     }
 };
 const mergedConfig= webpackMerge.merge(baseConfig, config);
+
+
 module.exports=mergedConfig;

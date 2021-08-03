@@ -12,8 +12,9 @@ import * as React from 'react';
 
 type fun = (draft: any) => void;
 
-type State = Record<string, any> | fun;
-
+/**
+ * UI基础组件
+ */
 export default class BaseComponent<P = {}, S = {}> extends React.Component<P, S> {
 
 

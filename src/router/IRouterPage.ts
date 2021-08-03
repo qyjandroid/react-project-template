@@ -6,16 +6,28 @@ export interface IRouterPage {
      * @memberof IRouterPage
      */
     component?: any;
-    /**
-     * path路径
-     *
-     * @type {string}
-     * @memberof IRouterPage
-     */
-    path?: string;
-
-    exact?: boolean;
 
     props?: { [key: string]: any };
+
+    /**
+     * 当前路由路径
+     */
+    path: string;
+    /**
+     * 当前路由名称
+     */
+    name?: string;
+    /**
+     * 是否严格匹配路由
+     */
+    exact?: boolean;
+    /**
+     * 是否需要动态加载路由
+     */
+    isDynamic?: boolean;
+    /**
+     * 动态加载路由时的提示文案
+     */
+    loadingFallback?: string;
 
 }

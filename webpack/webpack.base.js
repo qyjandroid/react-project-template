@@ -67,4 +67,5 @@ const config = {
     plugins: plugins.getPlugins()
 };
 
-module.exports =config;
+
+module.exports = config;

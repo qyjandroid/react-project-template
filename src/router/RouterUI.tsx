@@ -9,7 +9,12 @@ interface IRouterUIProps {
 }
 
 type IProps = IRouterUIProps & RouteComponentProps;
-
+/**
+ * 
+ * 渲染路由
+ * @class RouterUI
+ * @extends {BaseComponent<IProps>}
+ */
 class RouterUI extends BaseComponent<IProps> {
     /**
      * 生成router
@@ -33,8 +38,19 @@ class RouterUI extends BaseComponent<IProps> {
     }
 
     renderPage = (router: IRouterPage, routerProps: RouteComponentProps) => {
-        const { component, path, props, ...other } = router;
+        const { component, path, props, name, exact, isDynamic, loadingFallback, ...other } = router;
         const Page = component;
+        if (isDynamic) {
+            return (
+                <React.Suspense fallback={loadingFallback || '正在加载中...'} key={path}>
+                    <Page
+                        {...routerProps}
+                        {...props}
+                        {...other}
+                    />
+                </React.Suspense>
+            );
+        }
         return (
             <Page
                 key={path}

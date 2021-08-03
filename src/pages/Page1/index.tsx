@@ -4,14 +4,14 @@ import Page from "@/components/Page";
 import React from "react";
 import "./index.scss";
 
-class Home extends Page {
+class Page1 extends Page {
     render() {
         return (
-            <div className='home'>
-                <h1>Hello, World! </h1>
+            <div className='page1'>
+                <h1>Hello, Page1! </h1>
             </div>
         );
     }
 }
 
-export default Home;
+export default Page1;
