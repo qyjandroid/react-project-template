@@ -1,6 +1,9 @@
 const path = require("path");
 const webpackUtils = require("./util");
+const dotenv = require("dotenv") ;
 
+
+const {config : loadConfig}=dotenv;
 //__dirname 为当前目录文件路径
 
 const NODE_ENV=webpackUtils.getEnv();
@@ -18,15 +21,23 @@ const SRC_PATH = path.resolve(__dirname, "../../", "src");
 //是否是开发环境
  const IS_DEV = NODE_ENV === "dev";
 
+
+
+
 //当前构建的版本
 const version = webpackUtils.getVersion();
 
- function getCDNPath(){
+function getCDNPath(){
     return IS_PRO ? `${process.env.CDN_ROOT}/${version}/` : "/"
 }
 
 
- const ENV_CONFIG_PATH =  `./env/${NODE_ENV}.env`
+const ENV_CONFIG_PATH = path.resolve(ROOT_PATH,"env",`${NODE_ENV}.env`);
+
+//webpack 读取env 配置
+loadConfig({
+    path: ENV_CONFIG_PATH
+});
 
 
 console.log('::NODE_ENV', NODE_ENV);

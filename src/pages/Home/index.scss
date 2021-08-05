@@ -1,4 +1,18 @@
 .home {
     position: relative;
     width: 100%;
+    .bg1 {
+        position: relative;
+        width: 200px;
+        height: 300px;
+        background: url("~@/assets/images/01.png") no-repeat center;
+        background-size: 100% 100%;
+    }
+    .img1 {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 200px;
+        height: 300px;
+    }
 }

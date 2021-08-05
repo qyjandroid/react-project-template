@@ -1,24 +1,27 @@
-const merge=require("webpack-merge");
+const webpackMerge=require("webpack-merge");
 const baseConfig=require("./webpack.base");
 const variable =require("./webpackUtils/variable") ;
+// const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const config = {
     mode: "production",
     cache: { type: 'filesystem', buildDependencies: { config: [__filename] } },
+    output: {
+        pathinfo: false,//优化
+    },
     optimization: {
         minimize: true,//开启压缩
+        moduleIds: 'deterministic',//单独模块id，模块内容变化再更新
         splitChunks: {
             chunks: "all", // 匹配的块的类型：initial（初始块），async（按需加载的异步块），all（所有块）
             automaticNameDelimiter: "-",
             cacheGroups: {
                 // 项目第三方组件
                 vendor: {
-                    name: false,
+                    name: "vendors",
                     enforce: true, // ignore splitChunks.minSize, splitChunks.minChunks, splitChunks.maxAsyncRequests and splitChunks.maxInitialRequests
                     test: /[\\/]node_modules[\\/]/,
                     priority: 10,
-                    // filename: "vendor.[hash].js"
-                    minChunks: 2
                 },
                 // 项目公共组件
                 default: {
@@ -33,4 +36,5 @@ const config = {
     }
 };
 
-export default merge(baseConfig, config);
+const mergedConfig= webpackMerge.merge(baseConfig, config);
+module.exports=mergedConfig;

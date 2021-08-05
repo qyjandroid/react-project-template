@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "iconfont";
+    src: url("~@/assets/fonts/iconfont.ttf");
+}
+
+html,
+body {
+    height: 100%;
+    font-family: "iconfont" !important;
+    margin: 0;
+    color: #fff;
+}

@@ -12,10 +12,12 @@ const config = {
     },
     output: {
         path: DIST_PATH,
-        filename: IS_DEV ? "[name].bundle.js" : "[name].[contenthash:8].bundle.js",
+        filename: IS_DEV ? "js/[name].bundle.js" : "js/[name].[contenthash:8].bundle.js",
         publicPath: getCDNPath(),
         globalObject: 'this', 
-        chunkFilename: IS_DEV ? "[name].chunk.js" : "[name].[contenthash:8].chunk.js",
+        chunkFilename: IS_DEV ? "js/[name].chunk.js" : "js/[name].[contenthash:8].chunk.js",
+        assetModuleFilename: 'assets/[hash][ext][query]',
+        clean:true
     },
     //loader的执行顺序默认从右到左，多个loader用[],字符串只用一个loader，也可以是对象的格式
     module: {
@@ -38,7 +40,7 @@ const config = {
                         }
                     }
                 ],
-                exclude: /node_modules/,
+                exclude: [/node_modules/, /public/, /(.|_)min\.js$/],
             },
             {
                 test: /\.css$|\.scss$/i,
@@ -58,8 +60,18 @@ const config = {
                 ]
             },
             {
-                test: /\.(png|jpg|gif|jpeg|webp|svg|eot|ttf|woff|woff2)$/,
-                type: 'asset',
+                test: /\.(png|jpg|gif|jpeg|webp|svg)$/,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/images/[hash][ext][query]'
+                }
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/fonts/[hash][ext][query]'
+                }
             }
         ]
     },
