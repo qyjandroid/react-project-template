@@ -1,11 +1,11 @@
 
 
+import React from "react";
 import Page from "@/components/Page";
 import { UPDATE_USER_ID } from "@/store/actions/user";
 import connect from "@/store/connect";
-import React from "react";
 import CPng from "@/assets//images/02.png";
-
+import HomeChild from "./HomeChild";
 import "./index.scss";
 
 interface IHomeProps {
@@ -13,7 +13,16 @@ interface IHomeProps {
     updateId: (id: number) => void;
 }
 
-@connect({ userId: "user.userId" }, { updateId: UPDATE_USER_ID })
+const mapStateToProps = {
+    userId: "user.userId"
+}
+
+const mapDispatchToProps = {
+    updateId: UPDATE_USER_ID
+}
+
+
+@connect(mapStateToProps, mapDispatchToProps)
 class Home extends Page<IHomeProps>{
 
     componentDidMount = () => {
@@ -28,6 +37,7 @@ class Home extends Page<IHomeProps>{
                 <h1>Hello, World!{userId} </h1>
                 <div className="bg1"></div>
                 <img className="img1" src={CPng} ></img>
+                <HomeChild></HomeChild>
             </div>
         );
     }

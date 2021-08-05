@@ -22,17 +22,24 @@ const mapStateToProps = (filter: any) => (state: any) => {
     return retState;
 };
 
-const mapDispatchToProps = (filter: Record<string, string>) => dispatch => {
+const mapDispatchToProps = (filter: Record<string, string | Function>) => dispatch => {
     const keys = Object.keys(filter);
     if (!filter || keys.length === 0) {
         return {};
     }
     const ret = Object.keys(filter).reduce((obj, name) => {
         const path = filter[name];
-        const paths = path.split(".");
-        const type = paths.length === 1 ? paths[0] : paths[paths.length - 1];
-        // eslint-disable-next-line
-        obj[name] = payload => dispatch({ type, payload });
+        if (typeof path !== "string") {
+            obj[name] = (...args) => {
+                dispatch(path(...args));
+            };
+        } else {
+            const paths = path.split(".");
+            const type = paths.length === 1 ? paths[0] : paths[paths.length - 1];
+            // eslint-disable-next-line
+            obj[name] = payload => dispatch({ type, payload });
+        }
+
         return obj;
     }, {});
 

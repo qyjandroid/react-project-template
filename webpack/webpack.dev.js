@@ -24,7 +24,6 @@ const config = {
         compress: true,//是否启用gzip压缩
         publicPath: "/",
         host: "localhost",
-        hot:true,
         port: 9093,
         disableHostCheck: true,
         stats: 'errors-only',

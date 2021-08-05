@@ -7,6 +7,7 @@ document.title = "React App";
 
 class App extends React.Component {
     render() {
+        console.log("abc");
         return <>
             <RouterUI routers={routerConfig.routes} />
         </>

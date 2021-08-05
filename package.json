@@ -7,13 +7,14 @@
     "author": "quanyj <qyjandroid@163.com>",
     "license": "MIT",
     "scripts": {
-        "start": "cross-env NODE_ENV=dev webpack serve --config webpack/webpack.dev.js",
+        "start": "cross-env NODE_ENV=dev webpack serve --config webpack/webpack.dev.js --hot",
         "build:test": "cross-env NODE_ENV=test webpack --config webpack/webpack.dev.js",
         "build:prod": "cross-env NODE_ENV=prod webpack --config webpack/webpack.prod.js",
         "type-check": "tsc --watch"
     },
     "dependencies": {
         "axios": "^0.21.1",
+        "connected-react-router": "^6.9.1",
         "immer": "^9.0.5",
         "lodash": "^4.17.21",
         "react": "^17.0.2",

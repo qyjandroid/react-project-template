@@ -12,9 +12,10 @@ const {PUBLIC_PATH,DIST_PATH,ENV_CONFIG_PATH,IS_DEV,SRC_PATH}=variable;
 function getHTMLPlugins() {
     const indexHtmlPlugin = new HtmlWebpackPlugin({
         template: path.join(PUBLIC_PATH, 'index.html'),
-        filename: path.join(DIST_PATH, 'index.html'),
+        // filename: path.join(DIST_PATH, 'index.html'),
+        filename: 'index.html',
         inject: true,//true 插入body底部，head:插入head标签，false:不生成js文件
-        hash: true, // 会在打包好的bundle.js后面加上hash串
+        // hash: true, // 会在打包好的bundle.js后面加上hash串
         title: "",
         minify: {
             removeComments: true, // 删除注释
@@ -22,7 +23,6 @@ function getHTMLPlugins() {
             minifyCSS: true, // 压缩 HTML 中出现的 CSS 代码
             minifyJS: true // 压缩 HTML 中出现的 JS 代码
         },
-        page: "index"
     });
 
     return [indexHtmlPlugin];

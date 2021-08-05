@@ -2,6 +2,7 @@ import * as React from "react";
 import BaseComponent from "@/components/BaseComponent";
 import { Route, Switch, withRouter, RouteComponentProps } from "react-router-dom";
 import { IRouterPage } from "@/types/IRouterPage";
+import NoMatch from '@/components/NoMatch';
 
 
 interface IRouterUIProps {
@@ -26,18 +27,16 @@ class RouterUI extends BaseComponent<IProps> {
     renderRouter = (routers: IRouterPage[] = []) => {
         return routers.map(router => {
             let { path, exact } = router;
-            return <Route key={path} path={path} exact={exact ? true : false} render={(routerProps) => { return this.renderPage(router, routerProps) }} />
+            return <Route key={path} path={path} exact={exact ? true : false} render={(routerProps) => { return this.renderPage(router) }} />
         });
     }
 
-    renderPage = (router: IRouterPage, routerProps: RouteComponentProps) => {
+    renderPage = (router: IRouterPage) => {
         const { component, path, loadingFallback } = router;
         const Page = component;
         return (
             <React.Suspense fallback={loadingFallback || '正在加载中...'} key={path}>
-                <Page
-                    {...routerProps}
-                />
+                <Page />
             </React.Suspense>
         );
     }
@@ -47,7 +46,10 @@ class RouterUI extends BaseComponent<IProps> {
     render() {
         const { routers } = this.props;
         return (
-            <Switch>{this.renderRouter(routers)}</Switch>
+            <Switch>
+                {this.renderRouter(routers)}
+                <Route component={NoMatch} />
+            </Switch>
         );
     }
 }
