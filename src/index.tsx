@@ -6,6 +6,7 @@ import history from "@/store/reducers/history";
 import configureStore from "@/store";
 import { ConnectedRouter } from 'connected-react-router';
 import "./index.scss";
+import "@/assets/css/index.scss";
 import ResolutionCom from "@/components/ResolutionCom/ResolutionComp";
 
 try {

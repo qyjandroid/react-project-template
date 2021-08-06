@@ -1,0 +1,84 @@
+//注意，此文件只能存放变量，不允许写css样式，此文件为全局引入，写入css样式会出现多次打包问题。
+
+$ani: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+@mixin absolute($top: 0, $right: 0, $bottom: 0, $left: 0) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    left: $left;
+    bottom: $bottom;
+}
+
+@mixin wh($w: 100%, $h: 100%) {
+    width: $w;
+    height: $h;
+}
+
+@mixin relative($w, $h) {
+    position: relative;
+    @include wh($w, $h);
+}
+@mixin ellipsis() {
+    overflow: hidden;
+    text-overflow: ellipsis; //文本溢出显示省略号
+    white-space: nowrap; //文本不会换行（单行文本溢出）
+}
+
+@mixin ani($name: $ani) {
+    transition: $name;
+}
+
+@mixin activeBg($url, $isDisabled: false, $size: 100% 100%, $repeat: no-repeat, $suffix: ".png", $pre: "~@images/") {
+    background: url($pre + $url + $suffix) $repeat;
+    background-size: $size;
+    opacity: 1;
+    &:hover {
+        background: url($pre + $url + "-hover" + $suffix) $repeat;
+        background-size: $size;
+        opacity: 1;
+    }
+    &:active {
+        background: url($pre + $url + "-active" + $suffix) $repeat;
+        background-size: $size;
+        opacity: 0.8;
+    }
+    @if $isDisabled {
+        &.disabled {
+            background: url($pre + $url + "-disabled" + $suffix) $repeat;
+            background-size: $size;
+            &:hover {
+                background: url($pre + $url + "-disabled" + $suffix) $repeat;
+                background-size: $size;
+            }
+            &:active {
+                background: url($pre + $url + "-disabled" + $suffix) $repeat;
+                background-size: $size;
+            }
+        }
+    }
+}
+
+@mixin bgFill($url) {
+    background: url("~@images/" + $url) no-repeat center;
+    background-size: 100% 100%;
+}
+
+@mixin verticalAlign($width: 0, $height: 0, $border: 0, $fontSize: 0.1rem) {
+    width: 2 * $width;
+    height: 2 * $height;
+    border-width: 2 * $border;
+    font-size: 2 * $fontSize;
+    line-height: 2 * $height;
+    transform: scale(0.5, 0.5);
+    transform-origin: center;
+}
+
+@mixin flex() {
+    display: flex;
+    flex-direction: row;
+}
+@mixin flex-col() {
+    display: flex;
+    flex-direction: column;
+}

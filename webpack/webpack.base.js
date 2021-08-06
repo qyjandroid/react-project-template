@@ -56,7 +56,13 @@ const config = {
                         }
                     },
                     "postcss-loader",
-                    "sass-loader"
+                    "sass-loader",
+                    {
+                        loader: 'style-resources-loader',
+                        options: {
+                            patterns: path.resolve(SRC_PATH, "assets","css",'core.scss')
+                        }
+                    }
                 ]
             },
             {

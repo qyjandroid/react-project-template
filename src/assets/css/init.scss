@@ -1,0 +1,52 @@
+html,
+body {
+    position: relative;
+    margin: 0;
+    font-family: "微软雅黑", "思源黑体", "黑体";
+    -webkit-user-drag: none;
+    user-select: none;
+    width: 100%;
+    height: 100%;
+}
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #fff;
+    background-color: transparent;
+}
+
+#root {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-size: 25px;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 10px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    box-shadow: inset 0 0 0.05rem rgba(69, 68, 73, 0.4);
+    background: #82adda;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0.05rem rgba(69, 68, 73, 0.4);
+    border-radius: 0;
+    background: #0e2e6a;
+}

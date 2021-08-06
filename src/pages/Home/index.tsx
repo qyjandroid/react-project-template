@@ -15,11 +15,11 @@ interface IHomeProps {
 
 const mapStateToProps = {
     userId: "user.userId"
-}
+};
 
 const mapDispatchToProps = {
     updateId: UPDATE_USER_ID
-}
+};
 
 
 @connect(mapStateToProps, mapDispatchToProps)
@@ -34,7 +34,7 @@ class Home extends Page<IHomeProps>{
         const { userId } = this.props;
         return (
             <div className='home'>
-                <h1>Hello, World!{userId} </h1>
+                <div className="text1">Hello, World!{userId} </div>
                 <div className="bg1"></div>
                 <img className="img1" src={CPng} ></img>
                 <HomeChild></HomeChild>

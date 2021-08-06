@@ -19,12 +19,12 @@ const mapStateToProps = {
     pathname: "router.location.pathname",
     search: "router.location.search",
     hash: "router.location.hash",
-}
+};
 
 
 const mapDispatchToProps = {
     push
-}
+};
 
 @connect(mapStateToProps, mapDispatchToProps)
 class HomeChild extends BaseComponent<IHomeChildProps>{
@@ -35,9 +35,9 @@ class HomeChild extends BaseComponent<IHomeChildProps>{
         const { pathname, search, hash } = this.props;
         return (
             <div className='home-child'>
-                <h1>pathname::{pathname} </h1>
-                <h1>search::{search} </h1>
-                <h1>hash::{hash} </h1>
+                <div className="text1">pathname::{pathname} </div>
+                <div className="text1">search::{search} </div>
+                <div className="text1">hash::{hash} </div>
                 <button onClick={this.handleGoPage}>跳转page1</button>
             </div>
         );

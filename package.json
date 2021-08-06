@@ -55,6 +55,7 @@
         "sass": "^1.37.0",
         "sass-loader": "^12.1.0",
         "style-loader": "^3.2.1",
+        "style-resources-loader": "^1.4.1",
         "thread-loader": "^3.0.4",
         "webpack": "^5.47.1",
         "webpack-cli": "^4.7.2",
