@@ -5,8 +5,10 @@ module.exports = {
         require("postcss-preset-env"),
         require("postcss-pxtorem")(
             {
-                rootValue: 10,
-                propWhiteList: ["font-size", "height", "width", "line-height", "max-wdith", "max-height"],  // Enables converting of all properties – default is just font sizes.
+                rootValue: 100,
+                unitPrecision : 5 ,
+                minPixelValue: 2,  // 设置要替换的最小像素值
+                propWhiteList: ["font-size", "height", "width", "line-height", "max-wdith","letter-spacing", "max-height",'*position*'],  // Enables converting of all properties – default is just font sizes.
                 selectorBlackList: [".ig-"]  // 忽略的选择器   .ig-  表示 .ig- 开头的都不会转换
             }
         )
