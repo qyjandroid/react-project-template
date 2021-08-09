@@ -1,8 +1,8 @@
-import { ActionParam } from "@/types/IRedux";
+import { IActionParam } from "@/types/IRedux";
 import { Dispatch } from "redux";
 import { getStore } from "..";
 
-let innerDispatch: Dispatch<ActionParam>;
+let innerDispatch: Dispatch<IActionParam>;
 
 function getDispatch() {
     if (!innerDispatch) {

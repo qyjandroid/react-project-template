@@ -1,11 +1,11 @@
 import { AnyAction } from "redux";
 
-export interface ActionParam extends AnyAction {
+export interface IActionParam extends AnyAction {
     type: string;
     payload: any;
 }
 
-export enum RequestStatus {
+export enum IRequestStatus {
     none = "none",
     done = "done",
     error = "error",
@@ -13,5 +13,5 @@ export enum RequestStatus {
 }
 
 export default {
-    RequestStatus
+    IRequestStatus
 };

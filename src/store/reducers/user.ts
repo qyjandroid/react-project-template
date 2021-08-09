@@ -1,4 +1,4 @@
-import { ActionParam, RequestStatus } from "@/types/IRedux";
+import { IActionParam, IRequestStatus } from "@/types/IRedux";
 import produce from "immer";
 
 import {
@@ -8,7 +8,7 @@ import {
 } from "../actions/user";
 
 export interface UserState {
-    status: RequestStatus;
+    status: IRequestStatus;
     token: string;
     SSOToken: string;
     userId: number;
@@ -19,14 +19,14 @@ export interface UserState {
 const initialState: UserState = {
     token: null,
     SSOToken: null,
-    status: RequestStatus.none,
+    status: IRequestStatus.none,
     nickName: "",
     userId: 0,
     headId: 0
 };
 
 /* eslint-disable no-param-reassign  */
-const reducer = produce((draft: UserState, action: ActionParam) => {
+const reducer = produce((draft: UserState, action: IActionParam) => {
     switch (action.type) {
         case UPDATE_USER_ID:
             console.log("当前的用户信息==UPDATE_USER_ID=", action.payload);
