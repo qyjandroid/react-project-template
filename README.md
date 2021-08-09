@@ -5,78 +5,76 @@ react项目模板
 ```markdown
 react-project-tmp
 ├── .babelrc # babel配置
-├──  Webpack # webpack配置文件目录
-│ ├── webpack.base.config.js # Webpack 基础配置文件
-│ ├── webpack.dev.config.js # Webpack 开发环境配置文件
-│ ├── webpack.dll.config.js # Webpack dll 缓存依赖配置文件
-│ ├── webpack.html.config.js # Webpack 页面依赖配置文件
-│ └── webpack.prod.config.js # Webpack 生产环境配置文件
-├── package-lock.json # 锁定 npm 包依赖版本文件
+├──  Webpack # webpack公用配置目录
+│ │  ├──plugins # 公用插件集合
+│ │  ├──resolve # webpack resolve配置
+│ │  ├──utils # webpack 工具类
+│ │  ├──variable # webpack 变量配置
+│ ├── webpack.base.js # Webpack 基础配置文件
+│ ├── webpack.dev.js # Webpack 开发环境配置文件
+│ └── webpack.prod.js # Webpack 生产环境配置文件
+├── yarn.lock # 锁定 npm 包依赖版本文件
 ├── package.json
 ├── postcss.config.js # 自动兼容 CSS3 样式配置文件
 ├── prettier.config.js # 检查项目代码风格配置文件
-├── public # 存放不会被 Webpack 处理的静态资源文件：是真正的静态资源。一般是第三方库，需要通过绝对路径(/ 或者 cdn)来引用它们
-│ └── dll # Webpack dll 缓存包存放目录
+├── public # 存放html模板
 ├── README.md
 ├── src
-│ ├── assets # 存放会被 Webpack 处理的静态资源文件：一般是自己写的 js、css 或者图片等静态资源（不要什么都往里放，一般放“能被共用、很少变动”的文件，像 routes、d.ts、config 这些文件不会共用就不需要放进去）
+│ ├── assets # 存放会被 Webpack 处理的静态资源文件：一般是自己写的 js、css 或者图片等静态资源
 │ │ ├── fonts # iconfont 目录
 │ │ ├── images # 图片资源目录
-│ │ └── styles # 全局样式目录
+│ │ ├── css # 全局样式目录
+│ │ │  ├── common.scss # 全局通用样式目录
+│ │ │  ├── core.scss # 全局sass 变量目录,直接使用，不需要引用，全局已统一引入。
+│ │ │  └── init.scss # 全局初始化css
+│ │ └── js # 全局js
 │ ├── common # 存放项目通用文件
-│ │ ├── event-center.ts # 事件中心
-│ │ └── global-context.ts # 全局上下文
+│ │ ├── Resolution.ts # 布局适配配置中心
+│ │ └── AppContext.ts # 全局App上下文
 │ ├── components # 项目中通用的业务组件目录
 │ ├── config # 项目配置文件
-│ ├── custom-hooks # 项目中通用的自定义 hooks 目录
-│ ├── d.ts # 项目中 TS 声明文件目录
-│ │ ├── global.d.ts # 项目中全局的 TS 声明文件
-│ │ └── rematch-store.d.ts # 针对 rematch 的 TS 声明文件
-│ ├── entry # 项目入口文件
-│ │ ├── App.css
-│ │ ├── App.tsx
-│ │ ├── favicon.ico
-│ │ ├── index.html
-│ │ └── index.tsx
-│ ├── library # 组件库
+│ ├── pages # 项目页面目录
+│ ├── typings # 项目中d.ts 声明文件目录
+│ ├── types # 项目中声明文件
+│ │ ├── service # 项目中服务相关声明文件
+│ │ ├── enum.ts # 项目中枚举类型
+│ │ ├── IContext.ts  # 全局App上下文声明
+│ │ ├── IRedux.ts # redux相关声明
+│ │ └── IRouterPage.ts # 路由相关声明
+│ ├── uiLibrary # 组件库
 │ ├── routes # 路由目录
-│ │ ├── route-loader.tsx # 路由转化器
-│ │ └── routes-config.tsx # 路由配置入口文件
+│ │ ├── index.tsx # 路由配置入口文件
+│ │ └── RouterUI.tsx # 路由转换
 │ ├── services # 和后端相关的文件目录
-│ │ ├── api # 调用后端接口定义目录（统一维护）
+│ │ ├── api # 调用后端接口定义目录
 │ │ │ ├── index.ts
 │ │ ├── axios.ts # 基于 axios 二次封装
-│ │ ├── config.ts # 端口配置文件
+│ │ ├── BaseService.ts # 基础请求服务类型
+│ │ ├── ServerResponseManager.ts # 服务返回统一管理
+│ │ ├── serviceConfig.ts # 服务地址配置文件
 │ ├── store # redux 仓库
-│ │ ├── connect.ts # 针对 react-redux 中的 connect 类型声明
-│ │ ├── history.ts 
-│ │ ├── index.ts
-│ │ └── models # 数据模型目录
+│ │ ├── actionCreaters # action创建与分发绑定
+│ │ ├── action  # 项目中action
+│ │ ├── reducers  # 项目中reducers
+│ │ │  ├──history # 项目中路由相关history
+│ │ ├── index.ts # 全局 store 获取
+│ │ ├── connect.ts # react 页面与store 连接
 │ ├── utils # 全局通用工具函数目录
-│ └── views # 页面视图层
-│ │ ├── home
-│ │ │ ├── home.less
-│ │ │ └── Home.tsx
-│ │ ├── login
-│ │ │ ├── login.less
-│ │ │ └── Login.tsx
-│ │ └── register
-│ │ │ ├── register.less
-│ │ │ └── Register.tsx
+│ ├── App.tsx # App全局
+│ ├── index.tsx # 项目入口文件
+│ ├── index.scss # 项目入口引入的scss
 └── tsconfig.json # TS 配置文件
 ```
 
 ### tips
 
-- 项目中引入了 `Normalize.css `
-
-- 项目默认支持 CSS 模块化（xxx.module.css/xxx.module.less/.xxx.module.scss 这些文件会默认 CSS 模块化 处理）
+- 项目中引入了 `core.scss `,直接使用，不需要@import
 
 - 构建项目时会自动兼容 CSS3 样式，所以不需要自己去写浏览器兼容样式
 
 - 项目支持配置式路由
 
-- 项目中已经构建了一个事件中心（发布订阅）
+- 项目中集成了 `connected-react-router` ，路由存储在store中，界面直接从store获取
 
 - 项目中默认配置了一些常用工具函数
 
@@ -84,8 +82,6 @@ react-project-tmp
 
 - 项目中针对 `axios` 做了二次封装
 
-- 项目使用 `Eslint + Prettier` 统一代码风格
-
-- [在 WebStorm 中使用 Prettier 自动格式化代码]（）
-
-- 项目使用 `husky` 在 `git commit` 提交代码前，进行代码风格校验并修复
+- 项目直接使用px即可
+  
+- 项目大量使用装饰器，来简化代码
