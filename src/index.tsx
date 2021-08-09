@@ -8,6 +8,7 @@ import { ConnectedRouter } from 'connected-react-router';
 import "./index.scss";
 import "@/assets/css/index.scss";
 import ResolutionCom from "@/components/ResolutionCom/ResolutionComp";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 try {
     const store = configureStore({});
@@ -15,11 +16,13 @@ try {
         ReactDOM.render(
             <React.StrictMode>
                 <ResolutionCom>
-                    <Provider store={store}>
-                        <ConnectedRouter history={history}>
-                            <App />
-                        </ConnectedRouter>
-                    </Provider>
+                    <ErrorBoundary>
+                        <Provider store={store}>
+                            <ConnectedRouter history={history}>
+                                <App />
+                            </ConnectedRouter>
+                        </Provider>
+                    </ErrorBoundary>
                 </ResolutionCom>
             </React.StrictMode>,
             document.getElementById('root')

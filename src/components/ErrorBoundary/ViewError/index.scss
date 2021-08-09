@@ -1,0 +1,28 @@
+.error-custom-style-page {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+    .error-custom-style-mantle-page {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        .error-boundary-page {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            &:focus {
+                outline: none;
+            }
+            .reload-page {
+                margin-left: 10px;
+                color: #9810fd;
+            }
+        }
+    }
+}
