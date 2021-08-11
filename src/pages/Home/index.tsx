@@ -15,6 +15,10 @@ interface IHomeProps {
     updateId: (id: number) => void;
 }
 
+interface IHomeState {
+    count: number
+}
+
 const mapStateToProps = {
     userId: "user.userId"
 };
@@ -26,22 +30,32 @@ const mapDispatchToProps = {
 //参数装饰器，然后依次是方法装饰器，访问符装饰器，或属性装饰器应用到每个实例成员。
 @withAppContextDecorators
 @connect(mapStateToProps, mapDispatchToProps)
-class Home extends Page<IHomeProps & IAppContext>{
+class Home extends Page<IHomeProps & IAppContext, IHomeState>{
+    constructor(props) {
+        super(props);
+        this.state = {
+            count: 0
+        };
+    }
 
     componentDidMount = () => {
         setTimeout(() => {
             this.props.updateId(5);
         }, 3000)
         console.log(this.props.test());
+        this.setState({
+            count: 1
+        })
     }
 
     render() {
         const { userId } = this.props;
+        const { count } = this.state;
         console.log("this.props==", this.props);
         return (
             <div className='home'>
                 <div className="text1">Hello, World!{userId} </div>
-                <div className="bg1"></div>
+                <div className="bg1">{count}</div>
                 <img className="img1" src={CPng} ></img>
                 <HomeChild></HomeChild>
             </div>

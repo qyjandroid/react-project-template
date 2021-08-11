@@ -22,7 +22,7 @@ class App extends React.Component {
         console.log("aa==", this.a);
     }
     render() {
-        console.log("abc");
+        console.log("abc33");
         return <>
             <AppContext.Provider value={this.getLiveContextValue()}>
                 <RouterUI routers={routerConfig.routes} />

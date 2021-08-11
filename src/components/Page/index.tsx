@@ -15,6 +15,7 @@ import { RouteComponentProps } from "react-router-dom";
 class Page<P = {} & RouteComponentProps, S = {}> extends BaseComponent<P, S> {
     constructor(props) {
         super(props);
+        //TODO 可以加入页面访问统计等需求
     }
 
 

@@ -13,7 +13,7 @@ export const { Consumer } = AppContext;
 export const { Provider } = AppContext;
 
 export function withAppContext<T>(Com: React.ComponentType<IAppContext>) {
-    return class Component<P extends IAppContext & T, S> extends BaseComponent<P, S> {
+    return class <P extends IAppContext & T, S> extends BaseComponent<P, S> {
         render() {
             const { props } = this;
             return (
