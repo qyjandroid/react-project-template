@@ -15,6 +15,7 @@
     "dependencies": {
         "axios": "^0.21.1",
         "connected-react-router": "^6.9.1",
+        "events": "^3.3.0",
         "immer": "^9.0.5",
         "lodash": "^4.17.21",
         "react": "^17.0.2",
