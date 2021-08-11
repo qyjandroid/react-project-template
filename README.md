@@ -85,3 +85,15 @@ react-project-tmp
 - 项目直接使用px即可
   
 - 项目大量使用装饰器，来简化代码
+
+
+### 使用
+- 需要使用该项目模板，可以通过 quanyj-react-cli 脚手架获取
+- 安装
+```js
+    npm install quanyj-react-cli -g
+```
+- 创建项目
+```js
+    react-cli create 项目名称 -f
+```
