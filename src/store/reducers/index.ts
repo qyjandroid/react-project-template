@@ -1,11 +1,10 @@
 import { combineReducers } from "redux";
 import user from "./user";
-import history from "./history";
-import { connectRouter } from 'connected-react-router';
+import { reducer } from "./history";
 
 
 
 export default combineReducers({
-    router: connectRouter(history),//必须是router
+    router: reducer,//必须是router  connectRouter(history)
     user
 });

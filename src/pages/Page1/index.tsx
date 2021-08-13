@@ -7,12 +7,16 @@ import { goBack, CallHistoryMethodAction } from 'connected-react-router';
 import "./index.scss";
 
 interface IPageProps {
-    router: any,
+    pathname: string,
+    search: string;
+    hash: string;
     goBack: () => CallHistoryMethodAction;
 }
 
 const mapStateToProps = {
-    router: "router"
+    pathname: "router.location.pathname",
+    search: "router.location.search",
+    hash: "router.location.hash",
 };
 
 const mapDispatchToProps = {
@@ -23,6 +27,9 @@ const mapDispatchToProps = {
 @connect(mapStateToProps, mapDispatchToProps)
 class Page1 extends Page<IPageProps>{
 
+    componentDidMount = () => {
+        console.log("获取到的location===", this.props);
+    }
     handleGoBack = () => {
         this.props.goBack();
     }
