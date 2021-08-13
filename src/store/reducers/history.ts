@@ -14,6 +14,9 @@ export default history;
 //push 把页面状态保存在state对象中，当页面回来的时候，可以通过event.state获取到state对象。
 
 
+
+
+//查看connected-react-router 的connectRouter 方法，使immer与history 结合使用
 export interface HistoryState {
     location: any,
     action: any,
