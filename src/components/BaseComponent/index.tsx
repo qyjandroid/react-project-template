@@ -15,7 +15,7 @@ type fun = (draft: any) => void;
 /**
  * UI基础组件
  */
-export default class BaseComponent<P = {}, S = {}> extends React.Component<P, S> {
+export default class BaseComponent<P = {}, S = {}> extends React.PureComponent<P, S> {
 
     constructor(props) {
         super(props);
