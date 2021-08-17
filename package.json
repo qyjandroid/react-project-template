@@ -3,7 +3,10 @@
     "version": "1.0.0",
     "description": "react 项目模板",
     "main": "src/index.tsx",
-    "repository": "https://github.com.cnpmjs.org/qyjandroid/react-project-tmp.git",
+    "repository": {
+        "type": "git",
+        "url": "https: //github.com.cnpmjs.org/qyjandroid/react-project-tmp.git",
+    },
     "author": "quanyj <qyjandroid@163.com>",
     "license": "MIT",
     "scripts": {
