@@ -116,12 +116,13 @@ react-project-tmp
   
 
 ## 脚手架结合使用
+
 - 需要使用该项目模板，可以通过 [quanyj-react-cli](https://github.com/qyjandroid/react-cli) 脚手架获取
-- 安装
+- Install
 ```js
     npm install quanyj-react-cli -g
 ```
-- 创建项目
+- create project
 ```js
     react-cli create 项目名称 -f
 ```
@@ -129,6 +130,7 @@ react-project-tmp
 
 👤 **quanyj <qyjandroid@163.com>**
 
+* 掘金: https://juejin.cn/user/923245496789255
 * Github: [@qyjandroid](https://github.com/qyjandroid)
 
 ## 🤝 Contributing
