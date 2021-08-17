@@ -5,7 +5,7 @@
     "main": "src/index.tsx",
     "repository": {
         "type": "git",
-        "url": "https: //github.com.cnpmjs.org/qyjandroid/react-project-tmp.git",
+        "url": "https: //github.com.cnpmjs.org/qyjandroid/react-project-tmp.git"
     },
     "author": "quanyj <qyjandroid@163.com>",
     "license": "MIT",
