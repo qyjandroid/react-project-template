@@ -1,7 +1,35 @@
-# react-project-tmp
-react项目模板
+<h1 align="center">Welcome to react-project-tmp 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <img src="https://img.shields.io/badge/npm-%3E%3D6.14.6-blue.svg" />
+  <img src="https://img.shields.io/badge/node-%3E%3D12.18.4-blue.svg" />
+  <a href="#" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+</p>
 
-### 项目目录结构
+> react 项目模板
+
+### 🏠 [Homepage](https://github.com/qyjandroid/react-project-tmp)
+
+## Prerequisites
+
+- npm >=6.14.6
+- node >=12.18.4
+
+## Install
+
+```sh
+yarn install
+```
+
+## Usage
+
+```sh
+yarn run start
+```
+
+## 项目目录结构
 ```markdown
 react-project-tmp
 ├── .babelrc # babel配置
@@ -66,7 +94,7 @@ react-project-tmp
 └── tsconfig.json # TS 配置文件
 ```
 
-### tips
+## Tips
 
 - 项目中引入了 `core.scss `,直接使用，不需要@import
 
@@ -85,10 +113,10 @@ react-project-tmp
 - 项目直接使用px即可
   
 - 项目大量使用装饰器，来简化代码
+  
 
-
-### 使用
-- 需要使用该项目模板，可以通过 quanyj-react-cli 脚手架获取
+## 脚手架结合使用
+- 需要使用该项目模板，可以通过 [quanyj-react-cli](https://github.com/qyjandroid/react-cli) 脚手架获取
 - 安装
 ```js
     npm install quanyj-react-cli -g
@@ -97,3 +125,19 @@ react-project-tmp
 ```js
     react-cli create 项目名称 -f
 ```
+## Author
+
+👤 **quanyj <qyjandroid@163.com>**
+
+* Github: [@qyjandroid](https://github.com/qyjandroid)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/qyjandroid/react-project-tmp/issues). 
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
