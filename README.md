@@ -106,8 +106,6 @@ react-project-tmp
 
 - 项目中默认配置了一些常用工具函数
 
-- 项目中集成了 `rematch` ，简化 `redux` 的使用 
-
 - 项目中针对 `axios` 做了二次封装
 
 - 项目直接使用px即可
@@ -126,6 +124,18 @@ react-project-tmp
 ```js
     react-cli create 项目名称 -f
 ```
+
+
+## TODOList
+eslint 
+commit 提交检查
+webpack 编写Ts语法
+vite 支持
+dll 支持
+yml 文件 （CI/CD）
+
+## 推荐VSCode 插件
+
 ## Author
 
 👤 **quanyj <qyjandroid@163.com>**
@@ -143,3 +153,5 @@ Give a ⭐️ if this project helped you!
 
 ***
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+
+

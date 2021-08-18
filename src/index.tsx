@@ -15,7 +15,7 @@ try {
     const renderApp = () => {
         ReactDOM.render(
             <React.StrictMode>
-                <ResolutionCom>
+                <ResolutionCom >
                     <ErrorBoundary>
                         <Provider store={store}>
                             <ConnectedRouter history={history}>

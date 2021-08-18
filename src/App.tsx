@@ -21,6 +21,7 @@ class App extends React.Component {
     test = () => {
         console.log("aa==", this.a);
     }
+
     render() {
         console.log("abc33");
         return <>
