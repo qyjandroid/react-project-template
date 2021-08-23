@@ -9,9 +9,14 @@ import "./index.scss";
 import "@/assets/css/index.scss";
 import ResolutionCom from "@/components/ResolutionCom/ResolutionComp";
 import ErrorBoundary from "./components/ErrorBoundary";
+import Modal from "react-modal";
 
 try {
     const store = configureStore({});
+    const rootElement = document.getElementById("root");
+
+    Modal.setAppElement(rootElement);
+
     const renderApp = () => {
         ReactDOM.render(
             <React.StrictMode>

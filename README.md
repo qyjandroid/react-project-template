@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to react-project-tmp 👋</h1>
+<h1 align="center">Welcome to react-project-template 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <img src="https://img.shields.io/badge/npm-%3E%3D6.14.6-blue.svg" />
@@ -10,7 +10,7 @@
 
 > react 项目模板
 
-### 🏠 [Homepage](https://github.com/qyjandroid/react-project-tmp)
+### 🏠 [Homepage](https://github.com/qyjandroid/react-project-template)
 
 ## Prerequisites
 
@@ -31,7 +31,7 @@ yarn run start
 
 ## 项目目录结构
 ```markdown
-react-project-tmp
+react-project-template
 ├── .babelrc # babel配置
 ├──  Webpack # webpack公用配置目录
 │ │  ├──plugins # 公用插件集合
@@ -126,7 +126,7 @@ react-project-tmp
 ```
 
 
-## TODOList
+## TodoList
 eslint 
 commit 提交检查
 webpack 编写Ts语法
@@ -145,7 +145,7 @@ yml 文件 （CI/CD）
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/qyjandroid/react-project-tmp/issues). 
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/qyjandroid/react-project-template/issues). 
 
 ## Show your support
 
