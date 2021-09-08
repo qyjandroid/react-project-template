@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ComponentClass } from "react";
 import BaseComponent from "@/components/BaseComponent";
 import TContext from "./TContext";
 import { IAppContext } from '@/types/IContext';
@@ -27,6 +27,10 @@ export function withAppContext<T>(Com: React.ComponentType<IAppContext>) {
     };
 }
 
+export type ComponentDecorator<P = any> = <T extends ComponentClass<P>>(WrappedComponent: T) => T;
 
 
-export const withAppContextDecorators: any = withAppContext;
+// export const withRouter: ComponentDecorator = nativeWithRouter as any
+
+
+export const withAppContextDecorators: ComponentDecorator = withAppContext as any;
