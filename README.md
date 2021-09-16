@@ -44,7 +44,13 @@ react-project-template
 ├── yarn.lock # 锁定 npm 包依赖版本文件
 ├── package.json
 ├── postcss.config.js # 自动兼容 CSS3 样式配置文件
-├── prettier.config.js # 检查项目代码风格配置文件
+├── .editorconfig # IDE格式化规范
+├── .eslintignore  # eslint忽略文件配置
+├── .eslintrc.js # eslint配置文件
+├── .prettierignore # prettierc忽略文件配置
+├── .prettierrc # prettierc配置文件
+├── tsconfig.eslint.js # eslint检查typescript配置项配置文件
+├── eslintError.html # eslint报告文件
 ├── public # 存放html模板
 ├── README.md
 ├── src
@@ -127,7 +133,7 @@ react-project-template
 
 
 ## TodoList
-- [ ] eslint 
+- [x] eslint 
 - [ ] commit 提交检查
 - [ ] webpack 编写Ts语法
 - [ ] Vite 支持
