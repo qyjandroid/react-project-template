@@ -101,11 +101,6 @@
             "not op_mini all"
         ]
     },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
     "lint-staged": {
         "*.{ts,tsx}": [
             "yarn run lint",
