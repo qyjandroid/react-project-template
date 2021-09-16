@@ -1,48 +1,44 @@
-const fs = require("fs");
-const path = require("path");
-const packageConfig = require("../../package.json");
+const fs = require('fs');
+const packageConfig = require('../../package.json');
 
- function readFile(path) {
-    const content = fs.readFileSync(path, "utf-8");
-    return content;
+function readFile(curPath) {
+  const content = fs.readFileSync(curPath, 'utf-8');
+  return content;
 }
 
 /**
- * 
+ *
  * 获取版本
  * @export
- * @returns 
+ * @returns
  */
- function getVersion() {
-    //const version = readFile(path.join(__dirname, '../../version')).trim();  // return version;
-    return packageConfig.version || "1.0.0";
+function getVersion() {
+  //const version = readFile(path.join(__dirname, '../../version')).trim();  // return version;
+  return packageConfig.version || '1.0.0';
 }
 
 /**
- * 
+ *
  * 获取测试版本
  * @export
- * @returns 
+ * @returns
  */
- function getTestVersion() {
-    return packageConfig.testVersion || "1.0.0";
+function getTestVersion() {
+  return packageConfig.testVersion || '1.0.0';
 }
 
 /**
- * 
+ *
  * 获取env
- * @returns 
+ * @returns
  */
 function getEnv() {
-    return process.env.NODE_ENV || "dev";
+  return process.env.NODE_ENV || 'dev';
 }
 
-
-
-
 module.exports = {
-    readFile,
-    getVersion,
-    getTestVersion,
-    getEnv
+  readFile,
+  getVersion,
+  getTestVersion,
+  getEnv,
 };

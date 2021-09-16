@@ -1,0 +1,22 @@
+{
+    // 保存时格式化
+    "editor.formatOnSave": true,
+    // 相当于是 vscode 保存时调用的钩子事件
+    "editor.codeActionsOnSave": {
+        // 保存时使用 ESLint 修复可修复错误
+        "source.fixAll.eslint": true
+    },
+    // 针对对应文件设置默认格式化插件
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+}

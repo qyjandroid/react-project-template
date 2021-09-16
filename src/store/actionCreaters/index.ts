@@ -1,4 +1,3 @@
-import BaseUserInfoCreator from "./user";
+import BaseUserInfoCreator from './user';
 
 export const userInfoActions = new BaseUserInfoCreator();
-

@@ -1,15 +1,13 @@
 export interface IAppContext {
+  /**
+   * 用户ID
+   */
+  uid?: number;
 
-    /**
-     * 用户ID
-     */
-    uid?: number;
+  /**
+   * token
+   */
+  token?: string;
 
-    /**
-     * token
-     */
-    token?: string;
-
-    test: () => void;
-
+  test: () => void;
 }
