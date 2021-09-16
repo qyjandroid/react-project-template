@@ -14,7 +14,7 @@
         "build:test": "cross-env NODE_ENV=test webpack --config webpack/webpack.dev.js",
         "build:prod": "cross-env NODE_ENV=prod webpack --config webpack/webpack.prod.js",
         "type-check": "tsc --watch",
-        "lint": "eslint src/**/*.{ts,tsx} -f html --no-error-on-unmatched-pattern -o ./test.html",
+        "lint": "eslint src/**/*.{ts,tsx} -f html --no-error-on-unmatched-pattern -o ./eslintError.html"
     },
     "bugs": {
         "url": "https://github.com/qyjandroid/react-project-template/issues"
