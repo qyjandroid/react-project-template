@@ -16,7 +16,7 @@ class App extends React.Component {
   });
 
   test = () => {
-    console.log('aa==', this.a);
+    console.log('aa=2=', this.a);
   };
 
   render() {
