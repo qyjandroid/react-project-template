@@ -4,3 +4,5 @@
 /coverage
 # production
 /dist
+eslintError.html
+.eslintcache
