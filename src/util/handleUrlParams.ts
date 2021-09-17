@@ -32,19 +32,20 @@ export function addParams({
   if (!Object.keys(params).length) {
     return url;
   }
-  url = decodeURIComponent(url);
-  const [hostStr, searchStr] = url.split('?');
-  if (url.includes('?')) {
+  const curUrl = decodeURIComponent(url);
+  const [hostStr, searchStr] = curUrl.split('?');
+  let newParams = params;
+  if (curUrl.includes('?')) {
     const oldParams = {};
     searchStr.split('&').forEach(val => {
       const newVal = val.split('=');
       oldParams[newVal[0]] = newVal[1];
     });
     // 合并、去重参数
-    params = { ...oldParams, ...params };
+    newParams = { ...oldParams, ...params };
   }
   let [paramsStr, i] = ['', 1];
-  for (const [key, val] of Object.entries(params)) {
+  for (const [key, val] of Object.entries(newParams)) {
     paramsStr += i > 1 ? `&${key}=${val}` : `${key}=${val}`;
     i++;
   }

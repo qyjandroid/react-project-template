@@ -14,7 +14,7 @@
         "build:test": "cross-env NODE_ENV=test webpack --config webpack/webpack.dev.js",
         "build:prod": "cross-env NODE_ENV=prod webpack --config webpack/webpack.prod.js",
         "type-check": "tsc --watch",
-        "lint": "eslint src/**/*.{ts,tsx} -f html --no-error-on-unmatched-pattern --cache -o ./eslintError.html",
+        "lint": "eslint src/**/*.{ts,tsx} -f html --debug --cache -o ./eslintError.html",
         "lint:fix": "eslint src/**/*.{ts,tsx} --fix",
         "prepare": "husky install"
     },

@@ -7,9 +7,9 @@ export function generateRandomUUID(len: number, radix: number) {
   let chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
   let uuid = [],
     i;
-  radix = radix || chars.length;
+  const curRadix = radix || chars.length;
   if (len) {
-    for (i = 0; i < len; i++) uuid[i] = chars[0 | (Math.random() * radix)];
+    for (i = 0; i < len; i++) uuid[i] = chars[0 | (Math.random() * curRadix)];
   } else {
     let r;
     uuid[8] = uuid[13] = uuid[18] = uuid[23] = '-';

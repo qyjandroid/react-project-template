@@ -35,7 +35,9 @@ class HomeChild extends BaseComponent<IHomeChildProps> {
         <div className="text1">pathname::{pathname} </div>
         <div className="text1">search::{search} </div>
         <div className="text1">hash::{hash} </div>
-        <button onClick={this.handleGoPage}>跳转page1</button>
+        <button type="button" onClick={this.handleGoPage}>
+          跳转page1
+        </button>
       </div>
     );
   }

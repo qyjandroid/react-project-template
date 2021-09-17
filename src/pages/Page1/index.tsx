@@ -35,7 +35,9 @@ class Page1 extends Page<IPageProps> {
     return (
       <div className="page1">
         <div className="text1">Hello, Page122222! </div>
-        <button onClick={this.handleGoBack}>返回界面</button>
+        <button type="button" onClick={this.handleGoBack}>
+          返回界面
+        </button>
       </div>
     );
   }
