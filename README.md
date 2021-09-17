@@ -49,6 +49,8 @@ react-project-template
 ├── .eslintrc.js # eslint配置文件
 ├── .prettierignore # prettierc忽略文件配置
 ├── .prettierrc # prettierc配置文件
+├── .husky # 配置git提交钩子
+├── .commitlint.config.js # 配置git提交规范
 ├── tsconfig.eslint.js # eslint检查typescript配置项配置文件
 ├── eslintError.html # eslint报告文件
 ├── public # 存放html模板
