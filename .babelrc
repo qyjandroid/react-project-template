@@ -8,6 +8,13 @@
             {
                 "legacy": true
             }
+        ],
+        [
+            "@babel/plugin-transform-runtime",
+            {
+                "corejs": 3,
+                "regenerator": true
+            }
         ]
     ],
     "presets": [
