@@ -68,8 +68,7 @@
         }
     },
     "include": [
-        "src",
-        "postcss.config.js"
+        "src"
     ],
     "exclude": [
         "node_modules",
