@@ -31,3 +31,27 @@ export function classNames(...args: any) {
 
   return classes.join(' ');
 }
+
+export function isMobile() {
+  const flag = navigator.userAgent.match(
+    /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i,
+  );
+  if (flag) {
+    return true;
+  }
+  return false;
+}
+
+export function setTimeout(fn: () => void, time: number) {
+  const timer = window.setTimeout(fn, time);
+  return () => {
+    window.clearTimeout(timer);
+  };
+}
+
+export function setInterval(fn: () => void, time: number) {
+  const timer = window.setInterval(fn, time);
+  return () => {
+    window.clearInterval(timer);
+  };
+}
