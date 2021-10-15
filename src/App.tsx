@@ -7,7 +7,7 @@ import { IAppContext } from '@/types/IContext';
 document.title = 'React App';
 
 class App extends React.Component {
-  private a = 2;
+  private a = 3;
 
   getLiveContextValue = (): IAppContext => ({
     token: '123',
