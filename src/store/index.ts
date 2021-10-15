@@ -28,8 +28,7 @@ export default function configureStore(preloadedState?: any): Store<any, IAction
     ),
   );
 
-  console.log('process.env.ENV ===', process.env.ENV);
-  if (process.env.ENV == 'dev') {
+  if (import.meta.env.DEV) {
     // eslint-disable-next-line no-underscore-dangle
     (window as any).__store = store;
   }

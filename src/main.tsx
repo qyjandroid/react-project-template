@@ -35,5 +35,5 @@ try {
   };
   renderApp();
 } catch (e) {
-  console.log('e');
+  console.log('e', e);
 }

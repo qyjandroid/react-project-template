@@ -1,13 +1,12 @@
 /** 获取当前开发环境 */
 export function getEnv() {
   return {
-    isDev: process.env.ENV === 'dev', // 本地开发环境
-    isProd: process.env.ENV === 'prod', // 生产环境
-    isTest: process.env.ENV === 'test', //测试环境
+    isDev: import.meta.env.DEV, // 本地开发环境
+    isProd: import.meta.env.PROD, // 生产环境
   };
 }
 
-export function classNames(...args: any) {
+export function classNames(...args: any): any {
   const classes = [];
   for (let i = 0; i < args.length; i += 1) {
     const arg = args[i];
