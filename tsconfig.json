@@ -59,11 +59,12 @@
         // 不允许把 null、undefined 赋值给其他类型变量
         "strictNullChecks": false,
         "paths": {
+            //别名
             "@/*": [
                 "./src/*"
             ],
             "@images/*": [
-                "src/assets/images/*"
+                "./src/assets/images/*"
             ],
         }
     },
