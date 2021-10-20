@@ -57,7 +57,7 @@ class Home extends Page<HomeProps, IHomeState> {
     console.log('this.props==', this.props);
     return (
       <div className="home">
-        <div className="text1">Hello, World!{userId} </div>
+        <div className="text1">Hel4lo, World1!{userId} </div>
         <div className="bg1">{count}</div>
         <img className="img1" src={CPng} alt="" />
         <HomeChild />

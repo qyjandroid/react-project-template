@@ -4,15 +4,15 @@ const baseConfig = require('./webpack.base');
 const variable = require('./webpackUtils/variable');
 
 const { DIST_PATH } = variable;
-
-const hotPlugin = new webpack.HotModuleReplacementPlugin();
+//引入
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 const config = {
   mode: 'development',
   cache: { type: 'memory' },
   devtool: 'eval-cheap-module-source-map',
   stats: 'errors-only',
-  plugins: [hotPlugin],
+  plugins: [new ReactRefreshWebpackPlugin()].filter(Boolean),
   watchOptions: {
     aggregateTimeout: 500,
     poll: 1000,
@@ -25,6 +25,7 @@ const config = {
     publicPath: '/',
     host: 'localhost',
     port: 9093,
+    hot: true,
     disableHostCheck: true,
     stats: 'errors-only',
     proxy: {
