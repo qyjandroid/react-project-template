@@ -35,7 +35,15 @@ const config = {
           {
             loader: 'babel-loader', // 这是一个webpack优化点，使用缓存
             options: {
-              cacheDirectory: true,
+                cacheDirectory: true,
+                plugins: [
+                    IS_DEV && [
+                        require.resolve('react-refresh/babel'),
+                        {
+                            skipEnvCheck: true,
+                        },
+                    ],
+                ].filter(Boolean),
             },
           },
         ],
