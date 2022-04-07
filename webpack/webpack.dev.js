@@ -12,7 +12,7 @@ const config = {
   cache: { type: 'memory' },
   devtool: 'eval-cheap-module-source-map',
   stats: 'errors-only',
-  plugins: [new ReactRefreshWebpackPlugin()].filter(Boolean),
+  plugins: [new ReactRefreshWebpackPlugin()],
   watchOptions: {
     aggregateTimeout: 500,
     poll: 1000,
@@ -25,7 +25,7 @@ const config = {
     publicPath: '/',
     host: 'localhost',
     port: 9093,
-    hot: true,
+    // hot: true,
     disableHostCheck: true,
     stats: 'errors-only',
     proxy: {
@@ -36,5 +36,8 @@ const config = {
   },
 };
 const mergedConfig = webpackMerge.merge(baseConfig, config);
+
+
+mergedConfig.plugins = mergedConfig.plugins.filter(Boolean);
 
 module.exports = mergedConfig;

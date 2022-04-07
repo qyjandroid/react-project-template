@@ -50,7 +50,7 @@ module.exports = function (api) {
       {
         skipEnvCheck: true,
       },
-    ]);
+    ]).filter(Boolean);
   }
 
   return {
