@@ -44,14 +44,14 @@ module.exports = function (api) {
     ],
   ];
 
-  if (isDev) {
-    plugins.push([
-      'react-refresh/babel',
-      {
-        skipEnvCheck: true,
-      },
-    ]).filter(Boolean);
-  }
+  // if (isDev) {
+  //   plugins.push([
+  //     'react-refresh/babel',
+  //     {
+  //       skipEnvCheck: true,
+  //     },
+  //   ]).filter(Boolean);
+  // }
 
   return {
     // 这个不设置的话，webpack 魔法注释会被删除，魔法注释用于分包

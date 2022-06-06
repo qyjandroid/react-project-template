@@ -35,7 +35,7 @@ const config = {
           {
             loader: 'babel-loader', // 这是一个webpack优化点，使用缓存
             options: {
-                cacheDirectory: true
+              cacheDirectory: true,
             },
           },
         ],
@@ -68,14 +68,16 @@ const config = {
         test: /\.(png|jpg|gif|jpeg|webp|svg)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/images/[hash][ext][query]',
+          publicPath: '../',
+          filename: './assets/images/[hash][ext][query]',
         },
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/fonts/[hash][ext][query]',
+          publicPath: '../',
+          filename: './assets/fonts/[hash][ext][query]',
         },
       },
     ],

@@ -24,7 +24,7 @@ const IS_DEV = NODE_ENV === 'dev';
 const version = webpackUtils.getVersion();
 
 function getCDNPath() {
-  return IS_PRO ? `${process.env.CDN_ROOT}/${version}/` : '/';
+  return IS_PRO ? `${process.env.CDN_ROOT}/${version}/` : './';
 }
 
 const ENV_CONFIG_PATH = path.resolve(ROOT_PATH, 'env', `${NODE_ENV}.env`);

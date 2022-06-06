@@ -50,7 +50,7 @@ export function setAuthorization(token) {
 
 // TODO:: add 拦截器(拦截之后返回T??)，预设等等,
 export function get<T>(url: string, config?: AxiosRequestConfig): Promise<T> {
-  return axiosInstance.get<T>(url, config).then((res: AxiosResponse) => res.data);
+  return axiosInstance.get<T>(url, config).then((res: AxiosResponse) => res && res.data);
 }
 
 export function post<T>(url: string, data: any, config?: AxiosRequestConfig): Promise<T> {

@@ -19,17 +19,15 @@ try {
 
   const renderApp = () => {
     ReactDOM.render(
-      <React.StrictMode>
-        <ResolutionCom>
-          <ErrorBoundary>
-            <Provider store={store}>
-              <ConnectedRouter history={history}>
-                <App />
-              </ConnectedRouter>
-            </Provider>
-          </ErrorBoundary>
-        </ResolutionCom>
-      </React.StrictMode>,
+      <ResolutionCom>
+        <ErrorBoundary>
+          <Provider store={store}>
+            <ConnectedRouter history={history}>
+              <App />
+            </ConnectedRouter>
+          </Provider>
+        </ErrorBoundary>
+      </ResolutionCom>,
       document.getElementById('root'),
     );
   };

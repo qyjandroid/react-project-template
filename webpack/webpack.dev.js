@@ -5,14 +5,14 @@ const variable = require('./webpackUtils/variable');
 
 const { DIST_PATH } = variable;
 //引入
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+// const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 const config = {
   mode: 'development',
   cache: { type: 'memory' },
   devtool: 'eval-cheap-module-source-map',
   stats: 'errors-only',
-  plugins: [new ReactRefreshWebpackPlugin()],
+  // plugins: [new ReactRefreshWebpackPlugin()],
   watchOptions: {
     aggregateTimeout: 500,
     poll: 1000,
@@ -36,7 +36,6 @@ const config = {
   },
 };
 const mergedConfig = webpackMerge.merge(baseConfig, config);
-
 
 mergedConfig.plugins = mergedConfig.plugins.filter(Boolean);
 
