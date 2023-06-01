@@ -5,14 +5,12 @@ const variable = require('./webpackUtils/variable');
 
 const { DIST_PATH } = variable;
 //引入
-// const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 const config = {
   mode: 'development',
   cache: { type: 'memory' },
   devtool: 'eval-cheap-module-source-map',
   stats: 'errors-only',
-  // plugins: [new ReactRefreshWebpackPlugin()],
   watchOptions: {
     aggregateTimeout: 500,
     poll: 1000,

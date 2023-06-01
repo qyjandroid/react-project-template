@@ -142,7 +142,6 @@ react-project-template
 - [ ] dll 支持
 - [ ] yml 文件 （CI/CD）
 
-## 推荐VSCode 插件
 
 ## Author
 

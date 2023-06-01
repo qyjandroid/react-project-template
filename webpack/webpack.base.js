@@ -43,8 +43,8 @@ const config = {
       },
       {
         test: /\.css$|\.scss$/i,
-        include: [SRC_PATH],
-        exclude: /node_modules/, // 取消匹配node_modules里面的文件
+        // include: [SRC_PATH],
+        // exclude: /node_modules/, // 取消匹配node_modules里面的文件
         use: [
           IS_DEV ? 'style-loader' : MiniCssExtractPlugin.loader,
           {
@@ -54,7 +54,21 @@ const config = {
               sourceMap: !IS_PRO,
             },
           },
-          'postcss-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  [
+                    'postcss-preset-env',
+                    {
+                      // 其他选项
+                    },
+                  ],
+                ],
+              },
+            },
+          },
           'sass-loader',
           {
             loader: 'style-resources-loader',
@@ -68,16 +82,16 @@ const config = {
         test: /\.(png|jpg|gif|jpeg|webp|svg)$/,
         type: 'asset/resource',
         generator: {
-          publicPath: '../',
-          filename: './assets/images/[hash][ext][query]',
+          // publicPath: '../',
+          filename: 'assets/images/[hash][ext][query]',
         },
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
         generator: {
-          publicPath: '../',
-          filename: './assets/fonts/[hash][ext][query]',
+          // publicPath: '../',
+          filename: 'assets/fonts/[hash][ext][query]',
         },
       },
     ],

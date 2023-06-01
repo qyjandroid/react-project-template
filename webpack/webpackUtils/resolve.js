@@ -10,5 +10,6 @@ module.exports = {
   alias: {
     '@': SRC_PATH,
     '@images': path.resolve(SRC_PATH, 'assets/images'),
+    '@fonts': path.resolve(SRC_PATH, 'assets/fonts'),
   },
 };
