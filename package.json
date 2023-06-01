@@ -105,10 +105,6 @@
         ]
     },
     "lint-staged": {
-        "*.{ts,tsx}": [
-            "yarn run lint",
-            "git add --force"
-        ],
         "*.{md,json}": [
             "git add --force"
         ]

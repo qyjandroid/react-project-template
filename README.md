@@ -139,7 +139,6 @@ react-project-template
 - [x] commit 提交检查
 - [ ] webpack 编写Ts语法
 - [ ] Vite 支持
-- [ ] dll 支持
 - [ ] yml 文件 （CI/CD）
 
 
