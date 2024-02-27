@@ -10,6 +10,8 @@
 
 > react 项目模板
 
+### ！！！ 最新vite+router v6 + react 请点击 🏠 [Homepage](https://github.com/qyjandroid/react-hooks-vite)
+
 ### 🏠 [Homepage](https://github.com/qyjandroid/react-project-template)
 
 ## Prerequisites
